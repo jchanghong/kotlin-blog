@@ -26,19 +26,19 @@
         </td>
         <td th:text="${#dates.format(article.createTime,'yyyy-MM-dd')}">2016-10-14 10:41:50</td>
         <td th:data-id="${article.id}" th:data-state="${article.status}">
-            <button class="btn btn-primary btn-xs article-edit" type="button" title="编辑" >
+            <button class="btn btn-primary btn-xs article-edit" type="button" title="编辑">
                 编辑
             </button>
 
 
-            <button class="btn btn-info btn-xs article-state" type="button" th:text="${article.status}!=1?'正常':'关闭'" th:title="${article.status}!=1?'正常':'关闭'">
+            <button class="btn btn-info btn-xs article-state" type="button" th:text="${article.status}!=1?'正常':'关闭'"
+                    th:title="${article.status}!=1?'正常':'关闭'">
                 关闭
             </button>
 
-            <button class="btn btn-danger btn-xs article-delete" type="button" title="删除" >
+            <button class="btn btn-danger btn-xs article-delete" type="button" title="删除">
                 删除
             </button>
-
 
 
         </td>

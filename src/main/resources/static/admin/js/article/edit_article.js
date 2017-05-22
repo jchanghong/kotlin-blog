@@ -3,38 +3,38 @@ var testEditor;
 $(function () {
     testEditor = editormd("article-editormd", {
         width: "99%",
-        height: $(window).height()-20,
-        path : '/admin/lib/',
-        codeFold : true,
+        height: $(window).height() - 20,
+        path: '/admin/lib/',
+        codeFold: true,
         //syncScrolling : false,
-        saveHTMLToTextarea : false,    // 保存 HTML 到 Textarea
-        searchReplace : true,
+        saveHTMLToTextarea: false,    // 保存 HTML 到 Textarea
+        searchReplace: true,
         //watch : false,                // 关闭实时预览
-        htmlDecode : "style,script,<iframe,sub,sup,<embed,<div |onclick,title,onmouseover,onmouseout,style",            // 开启 HTML 标签解析，为了安全性，默认不开启
+        htmlDecode: "style,script,<iframe,sub,sup,<embed,<div |onclick,title,onmouseover,onmouseout,style",            // 开启 HTML 标签解析，为了安全性，默认不开启
         //toolbar  : false,             //关闭工具栏
         //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
-        emoji : true,
-        taskList : true,
+        emoji: true,
+        taskList: true,
         tocm: true,         // Using [TOCM]
-        tex : true,                   // 开启科学公式TeX语言支持，默认关闭
-        flowChart : true,             // 开启流程图支持，默认关闭
-        sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+        tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+        flowChart: true,             // 开启流程图支持，默认关闭
+        sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
         //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
         //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
         //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
         //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
         //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
-        imageUpload : true,
-        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-        imageUploadURL : "/admin/article/imageUpload",
-        toolbarIcons : function() {
-            return ["bold", "italic", "hr", "ucwords","uppercase", "lowercase", "list-ul", "list-ol", "|", "link", "reference-link", "image", "code", "code-block", "table","|", "datetime", "emoji", "pagebreak","|","goto-line", "watch", "preview", "search", "||", "post-article"]
+        imageUpload: true,
+        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL: "/admin/article/imageUpload",
+        toolbarIcons: function () {
+            return ["bold", "italic", "hr", "ucwords", "uppercase", "lowercase", "list-ul", "list-ol", "|", "link", "reference-link", "image", "code", "code-block", "table", "|", "datetime", "emoji", "pagebreak", "|", "goto-line", "watch", "preview", "search", "||", "post-article"]
         },
-        toolbarIconTexts : {
-            "post-article" : "发布"  // 如果没有图标，则可以这样直接插入内容，可以是字符串或HTML标签
+        toolbarIconTexts: {
+            "post-article": "发布"  // 如果没有图标，则可以这样直接插入内容，可以是字符串或HTML标签
         },
         // 自定义工具栏按钮的事件处理
-        toolbarHandlers : {
+        toolbarHandlers: {
             /**
              * @param {Object}      cm         CodeMirror对象
              * @param {Object}      icon       图标按钮jQuery元素对象
@@ -59,7 +59,7 @@ $(function () {
                 editArticle();
             },
         },
-        onload : function() {
+        onload: function () {
             //this.fullscreen();
             //this.unwatch();
             //this.watch().fullscreen();
@@ -74,24 +74,24 @@ $(function () {
 });
 
 function getRootPath() {
-	//获取当前网址，如： http://localhost:8080/GameFngine/share/meun.jsp
-	var curWwwPath = window.document.location.href;
-	//获取主机地址之后的目录，如： GameFngine/meun.jsp
-	var pathName = window.document.location.pathname;
-	var pos = curWwwPath.indexOf(pathName);
-	//获取主机地址，如： http://localhost:8080
-	var localhostPaht = curWwwPath.substring(0, pos);
-	//获取带"/"的项目名，如：/GameFngine
-	var projectName = pathName.substring(0,
-			pathName.substr(1).indexOf('/') + 1);
-	return (localhostPaht + projectName + "/");
+    //获取当前网址，如： http://localhost:8080/GameFngine/share/meun.jsp
+    var curWwwPath = window.document.location.href;
+    //获取主机地址之后的目录，如： GameFngine/meun.jsp
+    var pathName = window.document.location.pathname;
+    var pos = curWwwPath.indexOf(pathName);
+    //获取主机地址，如： http://localhost:8080
+    var localhostPaht = curWwwPath.substring(0, pos);
+    //获取带"/"的项目名，如：/GameFngine
+    var projectName = pathName.substring(0,
+        pathName.substr(1).indexOf('/') + 1);
+    return (localhostPaht + projectName + "/");
 }
 
 // 保存文章
-function editArticle(){
-	var articleId = $("#article-id").val();
+function editArticle() {
+    var articleId = $("#article-id").val();
     $.ajax({
-        url: '/admin/article/updateInfo?articleId='+articleId,
+        url: '/admin/article/updateInfo?articleId=' + articleId,
         success: function (data) {
             $('#addArticleContent').html(data);
             $('#addArticleModal').modal('show');
@@ -108,16 +108,16 @@ function editArticle(){
 }
 
 function save() {
-	var id = $("#articleId").val();
+    var id = $("#articleId").val();
 
     var categoryId = $("#categoryId").val();
-    if(isEmpty(categoryId)){
-        autoCloseconsole.log("请选择栏目",500);
+    if (isEmpty(categoryId)) {
+        autoCloseconsole.log("请选择栏目", 500);
         return false;
     }
     var title = $("#title").val();
-    if(isEmpty(title)){
-        autoCloseconsole.log("请输入标题",500);
+    if (isEmpty(title)) {
+        autoCloseconsole.log("请输入标题", 500);
         return false;
     }
     title = encodeURIComponent(title);
@@ -150,15 +150,15 @@ function save() {
 
     // 保存文章
     $.ajax({
-        type : "POST",
-        url :  '/admin/article/update',
-        data : 'id='+id+'&categoryId=' + categoryId + "&tags=" + tagIds + "&title=" + title + "&content=" + encodeURI(content) + "&description=" +  encodeURI(description),
-        success  : function(data) {
-            if(data.resultCode != 'success'){
-                autoCloseconsole.log(data.errorInfo,1000);
+        type: "POST",
+        url: '/admin/article/update',
+        data: 'id=' + id + '&categoryId=' + categoryId + "&tags=" + tagIds + "&title=" + title + "&content=" + encodeURI(content) + "&description=" + encodeURI(description),
+        success: function (data) {
+            if (data.resultCode != 'success') {
+                autoCloseconsole.log(data.errorInfo, 1000);
                 closeEditWindow();
                 return false;
-            }else{
+            } else {
                 new $.flavr({
                     content: '修改文章成功!',
 
@@ -183,11 +183,11 @@ function save() {
     });
 }
 
-function cancleEditArticle(){
-	window.location.href = getRootPath()+ "admin/article/list";
+function cancleEditArticle() {
+    window.location.href = getRootPath() + "admin/article/list";
 }
 
 //关闭编辑窗口
-function closeEditWindow(){
+function closeEditWindow() {
     $('#addArticleContent').modal('hide');
 }

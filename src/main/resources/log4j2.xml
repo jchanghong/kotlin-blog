@@ -7,7 +7,7 @@
 
     <appenders>
         <Console name="Console" target="system_out">
-            <PatternLayout pattern="${PATTERN}" />
+            <PatternLayout pattern="${PATTERN}"/>
         </Console>
     </appenders>
     <!--配置mybatis日志-->
@@ -19,9 +19,9 @@
         <logger name="log4j.logger.java.sql" level="debug" additivity="false">
             <appender-ref ref="Console"/>
         </logger>
-        <logger name="com.eumji.zblog.mapper" level="debug" />
+        <logger name="com.eumji.zblog.mapper" level="debug"/>
         <root level="info">
-            <appenderref ref="Console" />
+            <appenderref ref="Console"/>
         </root>
     </loggers>
 

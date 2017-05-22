@@ -6,15 +6,14 @@
     loginSubmit();
 });*/
 
-$("input").keydown(function(e){
-    if (e.keyCode==13) {
+$("input").keydown(function (e) {
+    if (e.keyCode == 13) {
         $("form").submit();
     }
 });
 
 
-
-function loginSubmit(){
+function loginSubmit() {
 
     var username = $("#username").val();
     var password = $("#password").val();
@@ -27,7 +26,7 @@ function loginSubmit(){
                 if (data.resultCode == "success") {
                     window.location.href = "/admin/article/list";
 
-                }else{
+                } else {
                     layer.alert('账号或者密码错误', {
                         icon: 2,
                     });

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="zh">
 <style>
-    fieldset{border:1px solid #1ab394; padding:10px;}
-    legend{display: block;
+    fieldset {
+        border: 1px solid #1ab394;
+        padding: 10px;
+    }
+
+    legend {
+        display: block;
         width: auto;
         padding: 0;
         margin-bottom: 0;
@@ -11,8 +16,19 @@
         border: none;
     }
 
-    .input-upload{ position: relative;}
-    .input-upload input[type="file"]{ position: absolute; left: 0px; top: 0px; width: 72px; height: 35px; opacity:.0;filter:alpha(opacity=00);}
+    .input-upload {
+        position: relative;
+    }
+
+    .input-upload input[type="file"] {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 72px;
+        height: 35px;
+        opacity: .0;
+        filter: alpha(opacity=00);
+    }
 
 </style>
 
@@ -23,25 +39,28 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">名称</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="siteName" name="siteName" maxlength="35" th:value="${partner.siteName}">
+                <input type="text" class="form-control" id="siteName" name="siteName" maxlength="35"
+                       th:value="${partner.siteName}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">地址</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="siteUrl" name="siteUrl" maxlength="35" th:value="${partner.siteUrl}">
+                <input type="text" class="form-control" id="siteUrl" name="siteUrl" maxlength="35"
+                       th:value="${partner.siteUrl}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">描述</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="siteDesc" name="siteDesc" maxlength="35" th:value="${partner.siteDesc}">
+                <input type="text" class="form-control" id="siteDesc" name="siteDesc" maxlength="35"
+                       th:value="${partner.siteDesc}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">排序</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="sort" name="sort" th:value="${partner.sort}" >
+                <input type="text" class="form-control" id="sort" name="sort" th:value="${partner.sort}">
             </div>
         </div>
         <div class="form-group">

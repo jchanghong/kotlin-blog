@@ -7,8 +7,8 @@
  * @returns Boolean
  */
 function isEmail(email) {
-	var pattern = /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
-	return pattern.test(email);
+    var pattern = /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
+    return pattern.test(email);
 }
 
 /**
@@ -17,7 +17,7 @@ function isEmail(email) {
  * @returns
  */
 function isSpaces(string) {
-	return /\s/.test(string);
+    return /\s/.test(string);
 }
 
 /**
@@ -25,19 +25,19 @@ function isSpaces(string) {
  * @param url
  * @returns Boolean
  */
-function isUrl(url){
-	var urlRegex = /^(http|https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i
-	return urlRegex.test(url);
-} 
+function isUrl(url) {
+    var urlRegex = /^(http|https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i
+    return urlRegex.test(url);
+}
 
 /**
  * 验证是否是汉字
  * @param string
  * @returns Boolean
  */
-function isChineseCharacter(string){
-	var strReg = /[\u4E00-\u9FA5]/gi;
-	return strReg.test(string);
+function isChineseCharacter(string) {
+    var strReg = /[\u4E00-\u9FA5]/gi;
+    return strReg.test(string);
 }
 
 /**
@@ -45,9 +45,9 @@ function isChineseCharacter(string){
  * @param string
  * @returns Boolean
  */
-function isFullSymbols(string){
-	var fullSymbolsReg = /[\uFE30-\uFFA0]/gi;
-	return fullSymbolsReg.test(string)
+function isFullSymbols(string) {
+    var fullSymbolsReg = /[\uFE30-\uFFA0]/gi;
+    return fullSymbolsReg.test(string)
 }
 
 /**
@@ -55,9 +55,9 @@ function isFullSymbols(string){
  * @param string
  * @returns
  */
-function isPositiveInteger(string){
-	var integerReg = /^[1-9]\d*$/;
-	return integerReg.test(string);
+function isPositiveInteger(string) {
+    var integerReg = /^[1-9]\d*$/;
+    return integerReg.test(string);
 }
 
 /**
@@ -66,8 +66,8 @@ function isPositiveInteger(string){
  * @returns
  */
 function isTelephone(telephone) {
-	var telephoneReg = /^0?\d{2,3}\-\d{7,8}$/
-	return telephoneReg.test(telephone)
+    var telephoneReg = /^0?\d{2,3}\-\d{7,8}$/
+    return telephoneReg.test(telephone)
 }
 
 /**
@@ -75,27 +75,27 @@ function isTelephone(telephone) {
  * @param string
  * @returns Boolean
  */
-function isQQNumber(string){
-	var qqNumberReg = /^[1-9][0-9]{4,}$/;
-	return qqNumberReg.test(string)
+function isQQNumber(string) {
+    var qqNumberReg = /^[1-9][0-9]{4,}$/;
+    return qqNumberReg.test(string)
 }
 
 /**
  * 验证是否是邮政编码
  * @returns Boolean
  */
-function isPostCode(postCode){
-	var postCode = /^[1-9]d{5}(?!d)$/;
-	return postCode.test(postCode);
+function isPostCode(postCode) {
+    var postCode = /^[1-9]d{5}(?!d)$/;
+    return postCode.test(postCode);
 }
 
 /**
  * 验证是否是IPV4地址
  * @returns Boolean
  */
-function isIP(ip){
-	var ipReg = /^d+.d+.d+.d+$/;
-	return ipReg.test(ip);
+function isIP(ip) {
+    var ipReg = /^d+.d+.d+.d+$/;
+    return ipReg.test(ip);
 }
 
 /**
@@ -103,8 +103,8 @@ function isIP(ip){
  * @returns Boolean
  */
 function isFloat(string) {
-	var reg = /^[1-9]d*.d*|0.d*[1-9]d*$/;
-	return reg.test(string);
+    var reg = /^[1-9]d*.d*|0.d*[1-9]d*$/;
+    return reg.test(string);
 }
 
 /**
@@ -113,8 +113,8 @@ function isFloat(string) {
  * @returns Boolean
  */
 function isMobile(string) {
-	var reg = /^0?(13[0-9]|15[0123456789]|18[012356789]|14[57]|17[0-9])[0-9]{8}$/;
-	return reg.test(string);
+    var reg = /^0?(13[0-9]|15[0123456789]|18[012356789]|14[57]|17[0-9])[0-9]{8}$/;
+    return reg.test(string);
 }
 
 /**
@@ -123,9 +123,9 @@ function isMobile(string) {
  * @returns {Boolean}
  */
 function isEmpty(str) {
-	if (!str || $.trim(str).length <= 0||str==null||str==undefined)
-		return true;
-	return false;
+    if (!str || $.trim(str).length <= 0 || str == null || str == undefined)
+        return true;
+    return false;
 }
 
 /**
@@ -133,10 +133,10 @@ function isEmpty(str) {
  * @param str
  * @param length
  */
-function isSpecifyLength(str,minLen,maxLen) {
-	if ($.trim(str).length >= minLen && $.trim(str).length <= maxLen)
-		return true;
-	return false;
+function isSpecifyLength(str, minLen, maxLen) {
+    if ($.trim(str).length >= minLen && $.trim(str).length <= maxLen)
+        return true;
+    return false;
 }
 
 /**
@@ -145,8 +145,8 @@ function isSpecifyLength(str,minLen,maxLen) {
  * @returns {Boolean}
  */
 function isSpecialSymbols(str) {
-	var pattern = new RegExp("[`~!@#$^&*()={}':;',\\[\\].<>/?~！@#￥……&*（）{}【】‘；：”“'。，、？]");
-	return pattern.test(str);
+    var pattern = new RegExp("[`~!@#$^&*()={}':;',\\[\\].<>/?~！@#￥……&*（）{}【】‘；：”“'。，、？]");
+    return pattern.test(str);
 }
 
 /**
@@ -155,8 +155,8 @@ function isSpecialSymbols(str) {
  * @returns {Boolean}
  */
 function isNumber(str) {
-	var reg = /^(0|[1-9][0-9]*)$/;
-	return reg.test(str);
+    var reg = /^(0|[1-9][0-9]*)$/;
+    return reg.test(str);
 }
 
 /**
@@ -164,18 +164,18 @@ function isNumber(str) {
  * @param d1
  * @param d2
  */
-function compareDate(start,end) {
-	var d1 = new Date(start.replace(/\-/g, "\/"));
-	var d2 = new Date(end.replace(/\-/g, "\/"));
-	return d1 > d2
+function compareDate(start, end) {
+    var d1 = new Date(start.replace(/\-/g, "\/"));
+    var d2 = new Date(end.replace(/\-/g, "\/"));
+    return d1 > d2
 }
 
 /**
  * 包名
  */
 function isPackageName(packageName) {
-	var reg = /^([a-zA-Z]+[.][a-zA-Z]+)[.]*.*$/;
-	return reg.test(packageName);
+    var reg = /^([a-zA-Z]+[.][a-zA-Z]+)[.]*.*$/;
+    return reg.test(packageName);
 }
 
 /**
@@ -184,6 +184,6 @@ function isPackageName(packageName) {
  * @returns {Boolean}
  */
 function isSpecialSymbolsNoPoint(str) {
-	var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\]<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");
-	return pattern.test(str);
+    var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\]<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");
+    return pattern.test(str);
 }

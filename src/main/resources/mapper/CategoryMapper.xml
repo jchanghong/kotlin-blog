@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.eumji.zblog.mapper.CategoryMapper">
-
+<mapper namespace="com.jchanghong.mapper.CategoryMapper">
+    <cache eviction="LRU" flushInterval="60000" readOnly="true"/>
     <select id="initPage" resultType="int">
         select count(id) from category
     </select>
@@ -43,11 +43,11 @@
     </select>
 
     <select id="checkExist" resultType="int">
-        select count(id) from category  where (categoryName=#{categoryName} or aliasName = #{aliasName})
+        select count(id) from category where (categoryName=#{categoryName} or aliasName = #{aliasName})
         <if test="id != null and id != ''">
             and id != #{id}
         </if>
-   </select>
+    </select>
     <!--保存一个分类-->
     <insert id="saveCategory">
         insert into category(categoryName, aliasName, sort) values(#{categoryName},#{aliasName},#{sort})

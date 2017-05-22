@@ -1,15 +1,15 @@
 function getRootPath() {
-	//获取当前网址，如： http://localhost:8080/GameFngine/share/meun.jsp
-	var curWwwPath = window.document.location.href;
-	//获取主机地址之后的目录，如： GameFngine/meun.jsp
-	var pathName = window.document.location.pathname;
-	var pos = curWwwPath.indexOf(pathName);
-	//获取主机地址，如： http://localhost:8080
-	var localhostPaht = curWwwPath.substring(0, pos);
-	//获取带"/"的项目名，如：/GameFngine
-	var projectName = pathName.substring(0,
-			pathName.substr(1).indexOf('/') + 1);
-	return (localhostPaht + projectName + "/");
+    //获取当前网址，如： http://localhost:8080/GameFngine/share/meun.jsp
+    var curWwwPath = window.document.location.href;
+    //获取主机地址之后的目录，如： GameFngine/meun.jsp
+    var pathName = window.document.location.pathname;
+    var pos = curWwwPath.indexOf(pathName);
+    //获取主机地址，如： http://localhost:8080
+    var localhostPaht = curWwwPath.substring(0, pos);
+    //获取带"/"的项目名，如：/GameFngine
+    var projectName = pathName.substring(0,
+        pathName.substr(1).indexOf('/') + 1);
+    return (localhostPaht + projectName + "/");
 }
 
 // Custom scripts
@@ -19,7 +19,7 @@ $(document).ready(function () {
     $('#side-menu').metisMenu();
 
     // Collapse ibox function
-    $('.collapse-link').click( function() {
+    $('.collapse-link').click(function () {
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
         var content = ibox.find('div.ibox-content');
@@ -33,13 +33,13 @@ $(document).ready(function () {
     });
 
     // Close ibox function
-    $('.close-link').click( function() {
+    $('.close-link').click(function () {
         var content = $(this).closest('div.ibox');
         content.remove();
     });
 
     // Small todo config
-    $('.check-link').click( function(){
+    $('.check-link').click(function () {
         var button = $(this).find('i');
         var label = $(this).next('span');
         button.toggleClass('fa-check-square').toggleClass('fa-square-o');
@@ -73,21 +73,22 @@ $(document).ready(function () {
         var heightWithoutNavbar = $("body > #wrapper").height() - 61;
         $(".sidebard-panel").css("min-height", heightWithoutNavbar + "px");
     }
+
     fix_height();
 
     // Fixed Sidebar
     // unComment this only whe you have a fixed-sidebar
-            //    $(window).bind("load", function() {
-            //        if($("body").hasClass('fixed-sidebar')) {
-            //            $('.sidebar-collapse').slimScroll({
-            //                height: '100%',
-            //                railOpacity: 0.9,
-            //            });
-            //        }
-            //    })
+    //    $(window).bind("load", function() {
+    //        if($("body").hasClass('fixed-sidebar')) {
+    //            $('.sidebar-collapse').slimScroll({
+    //                height: '100%',
+    //                railOpacity: 0.9,
+    //            });
+    //        }
+    //    })
 
-    $(window).bind("load resize click scroll", function() {
-        if(!$("body").hasClass('body-small')) {
+    $(window).bind("load resize click scroll", function () {
+        if (!$("body").hasClass('body-small')) {
             fix_height();
         }
     })
@@ -98,23 +99,23 @@ $(document).ready(function () {
 
 
 // For demo purpose - animation css script
-function animationHover(element, animation){
+function animationHover(element, animation) {
     element = $(element);
     element.hover(
-        function() {
+        function () {
             element.addClass('animated ' + animation);
         },
-        function(){
+        function () {
             //wait for animation to finish before removing classes
-            window.setTimeout( function(){
+            window.setTimeout(function () {
                 element.removeClass('animated ' + animation);
             }, 2000);
         });
 }
 
 // Minimalize menu when screen is less than 768px
-$(function() {
-    $(window).bind("load resize", function() {
+$(function () {
+    $(window).bind("load resize", function () {
         if ($(this).width() < 769) {
             $('body').addClass('body-small')
         } else {
@@ -132,7 +133,7 @@ function SmoothlyMenu() {
             function () {
                 $('#side-menu').fadeIn(500);
             }, 100);
-    } else if ($('body').hasClass('fixed-sidebar')){
+    } else if ($('body').hasClass('fixed-sidebar')) {
         $('#side-menu').hide();
         setTimeout(
             function () {

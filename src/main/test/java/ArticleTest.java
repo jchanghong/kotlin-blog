@@ -3,7 +3,6 @@ package PACKAGE_NAME;
 import com.eumji.zblog.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -24,18 +23,18 @@ import java.util.Random;
 public class ArticleTest {
 
     @Test
-    public void getTime(){
+    public void getTime() {
         for (int i = 0; i < 20; i++) {
             System.out.println(System.currentTimeMillis());
         }
     }
 
     @Test
-    public void timeTest(){
+    public void timeTest() {
         String yyyyMMdd = new SimpleDateFormat("yyyyMMdd").format(new Date());
         for (int i = 0; i < 10; i++) {
-            int random = new Random().nextInt(899)+100;
-            System.out.println(yyyyMMdd+random);
+            int random = new Random().nextInt(899) + 100;
+            System.out.println(yyyyMMdd + random);
         }
 
     }

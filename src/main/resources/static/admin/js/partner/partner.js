@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     $("#partner-manage-li").addClass("active");
     $("#partner-list-li").addClass("active");
     $("#partner-list-li").parent().addClass("in");
@@ -49,7 +49,7 @@ function loadPartnerList() {
     // 查询列表
     $.ajax({
         url: '/admin/partner/load',
-        data: 'page=' + page+"&param="+param,
+        data: 'page=' + page + "&param=" + param,
         success: function (data) {
             $("#dataList").html(data);
         }
@@ -59,13 +59,13 @@ function loadPartnerList() {
 
 
 // 搜索
-$("#partner-search").on('click',function () {
+$("#partner-search").on('click', function () {
     loadPartnerList();
 
 });
 
 // 删除栏目
-$("#dataList").on('click','.partner-delete',function () {
+$("#dataList").on('click', '.partner-delete', function () {
     new $.flavr({
         content: '确定要删除吗?',
         buttons: {
@@ -95,9 +95,9 @@ $("#dataList").on('click','.partner-delete',function () {
 });
 
 // 跳转栏目编辑页
-$("#dataList").on('click','.partner-edit',function () {
+$("#dataList").on('click', '.partner-edit', function () {
     $.ajax({
-        url: '/admin/partner/editJump/'+$(this).parent().data("id"),
+        url: '/admin/partner/editJump/' + $(this).parent().data("id"),
         method: "GET",
         success: function (data) {
             $('#editPartnerContent').html(data);
@@ -110,7 +110,7 @@ $("#dataList").on('click','.partner-edit',function () {
 
 
 // 跳转新增页面
-$("#partner-add").on("click",function () {
+$("#partner-add").on("click", function () {
     $.ajax({
         url: '/admin/partner/addJump',
         success: function (data) {

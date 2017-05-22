@@ -1,17 +1,17 @@
 /**
  * Created by EumJi on 2017/4/16.
  */
-$(function() {
+$(function () {
     var testEditormdView;
     $('#main').addClass('loaded');
-    $.get("", function(markdown) {
+    $.get("", function (markdown) {
         testEditormdView = editormd.markdownToHTML("article-content", {
-            htmlDecode      : "style,script,<iframe",  // you can filter tags decode
-            emoji           : true,
-            taskList        : true,
-            tex             : true,  // 默认不解析
-            flowChart       : true,  // 默认不解析
-            sequenceDiagram : true,  // 默认不解析 // 默认不解析
+            htmlDecode: "style,script,<iframe",  // you can filter tags decode
+            emoji: true,
+            taskList: true,
+            tex: true,  // 默认不解析
+            flowChart: true,  // 默认不解析
+            sequenceDiagram: true,  // 默认不解析 // 默认不解析
         });
 
         //console.log("返回一个 jQuery 实例 =>", testEditormdView);
@@ -29,19 +29,18 @@ $(function() {
     /*分享初始化*/
     $("#socialShare").socialShare({
         content: $("#"),
-        url:getRootPath()+$("#article-url").attr("href"),
-        title:$("#article-title").text(),
-        summary:'Eumji个人博客分享,欢迎指教',
-        pic:'http://of8rkrh1w.bkt.clouddn.com/2017/4/21/touxiang.jpg'
+        url: getRootPath() + $("#article-url").attr("href"),
+        title: $("#article-title").text(),
+        summary: 'Eumji个人博客分享,欢迎指教',
+        pic: 'http://of8rkrh1w.bkt.clouddn.com/2017/4/21/touxiang.jpg'
     });
 
     $('#loader-wrapper .load_title').remove();
 });
 
 
-
 function loadCategory(categoryId) {
-    var loadPager = {start:0,limit:10};
+    var loadPager = {start: 0, limit: 10};
     $.ajax({
         type: 'GET',
         url: '/category/load/' + categoryId,
@@ -54,11 +53,11 @@ function loadCategory(categoryId) {
 }
 
 function loadTag(tagId) {
-    var loadPager = {start:0,limit:10};
+    var loadPager = {start: 0, limit: 10};
 
     $.ajax({
         type: 'GET',
-        url: '/tag/load/'+tagId,
+        url: '/tag/load/' + tagId,
         data: {pager: loadPager},
         success: function (data) {
             $("#main").html(data);

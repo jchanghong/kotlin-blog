@@ -1,17 +1,17 @@
-var pager = {page:1,start:0,limit:10};
+var pager = {page: 1, start: 0, limit: 10};
 /*初始化文章分页信息*/
 $(function () {
     $('body').addClass('loaded');
-            $.ajax({
-                type: 'GET',
-                url: '/pager/articles/load',
-                data:pager,
-                success: function (data){
-                    pager = data;
-                    $("#pagination").data("type","article");
-                    initPage(null);
-                }
-        });
+    $.ajax({
+        type: 'GET',
+        url: '/pager/articles/load',
+        data: pager,
+        success: function (data) {
+            pager = data;
+            $("#pagination").data("type", "article");
+            initPage(null);
+        }
+    });
 
 })
 
@@ -44,7 +44,7 @@ function initPage(id) {
         onPageChange: function (num, type) {
             pager.page = num;
             var type = $("#pagination").data("type");
-            loadList(type,id);
+            loadList(type, id);
             // 当前第几页
             $("#current-page").text(num);
             $(".chosen-select").chosen({
@@ -58,13 +58,13 @@ function initPage(id) {
 }
 
 /*将加载文章,文章分类,标签分类重构成一个方法*/
-function  loadList(type,id) {
+function loadList(type, id) {
     var url = "";
-    if (type == "article"){
-        url = '/'+type+'/load';
+    if (type == "article") {
+        url = '/' + type + '/load';
     }
-    else{
-        url = '/'+type+'/load/'+id;
+    else {
+        url = '/' + type + '/load/' + id;
     }
     $.ajax({
         type: 'GET',
@@ -77,68 +77,68 @@ function  loadList(type,id) {
             /*分享初始化*/
             $(".socialShare").socialShare({
                 content: "EumJi在IT,生活,音乐方面的分享",
-                url:"www.eumji025.com/",
-                title:$("#article-title").text(),
-                summary:'Eumji个人博客分享,欢迎指教',
-                pic:'http://of8rkrh1w.bkt.clouddn.com/2017/4/21/touxiang.jpg'
+                url: "www.jchanghong.com/",
+                title: $("#article-title").text(),
+                summary: 'Eumji个人博客分享,欢迎指教',
+                pic: 'http://of8rkrh1w.bkt.clouddn.com/2017/4/21/touxiang.jpg'
             });
             $('#loader-wrapper .load_title').remove();
         }
     });
 }
 
-$("#main-article").on('click','.article-tag-link',function () {
+$("#main-article").on('click', '.article-tag-link', function () {
     var tagId = $(this).data("id");
-    var loadPager = {page:1,start:0,limit:10};
+    var loadPager = {page: 1, start: 0, limit: 10};
     $.ajax({
         type: 'GET',
         url: '/pager/tags/' + tagId,
         data: loadPager,
         success: function (data) {
             pager = data;
-            $("#pagination").data("type","tags");
+            $("#pagination").data("type", "tags");
             initPage(tagId);
         }
     });
 })
 
 /*文章归档点击事件*/
-$(".archive-list-link").on('click',function () {
+$(".archive-list-link").on('click', function () {
     var createTime = $(this).data("id");
-    var count  = $(this).next().text();
+    var count = $(this).next().text();
     pager.totalCount = count;
-    pager.totalPageNum = Math.floor(count/pager.limit)+1;
+    pager.totalPageNum = Math.floor(count / pager.limit) + 1;
     pager.page = 1;
-    $("#pagination").data("type","createTime");
+    $("#pagination").data("type", "createTime");
     initPage(createTime);
 })
 /*文章分类点击事件*/
-$(".category-list-link").on('click',function () {
+$(".category-list-link").on('click', function () {
     var categoryId = $(this).data("id");
-    var loadPager = {page:1,start:0,limit:10};
+    var loadPager = {page: 1, start: 0, limit: 10};
     $.ajax({
         type: 'GET',
         url: '/pager/categories/' + categoryId,
         data: loadPager,
         success: function (data) {
             pager = data;
-            $("#pagination").data("type","categories");
+            $("#pagination").data("type", "categories");
             initPage(categoryId);
         }
     });
 })
 
 /*为动态元素绑定lick事件*/
-$("#main-article").on('click','.article-category-link',function () {
+$("#main-article").on('click', '.article-category-link', function () {
     var categoryId = $(this).data("id");
-    var loadPager = {page:1,start:0,limit:10};
+    var loadPager = {page: 1, start: 0, limit: 10};
     $.ajax({
         type: 'GET',
         url: '/pager/categories/' + categoryId,
         data: loadPager,
         success: function (data) {
             pager = data;
-            $("#pagination").data("type","categories");
+            $("#pagination").data("type", "categories");
             initPage(categoryId);
         }
     });
