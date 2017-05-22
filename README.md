@@ -3,7 +3,8 @@
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##改自 [enum](https://github.com/eumji025/EumJi-blog) 感谢原作者
-
+##计划前端和后端全部用kotlin重写
+学习kotlin。
 这个项目是使用spring boot + thymeleaf 开发个人博客项目.
 
 初期开发已经完成,网站已经上线.
